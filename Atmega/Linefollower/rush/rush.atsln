@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "rush", "rush\rush.cproj", "{C14A8C0E-913E-415E-B2A4-1CC92F91B3C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C14A8C0E-913E-415E-B2A4-1CC92F91B3C6}.Debug|AVR.ActiveCfg = Debug|AVR
+		{C14A8C0E-913E-415E-B2A4-1CC92F91B3C6}.Debug|AVR.Build.0 = Debug|AVR
+		{C14A8C0E-913E-415E-B2A4-1CC92F91B3C6}.Release|AVR.ActiveCfg = Release|AVR
+		{C14A8C0E-913E-415E-B2A4-1CC92F91B3C6}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

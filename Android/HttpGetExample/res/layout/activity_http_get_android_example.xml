@@ -1,0 +1,61 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       >
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="wrap_content"   
+    android:layout_height="wrap_content"
+        android:stretchColumns="*" android:background="#ffffff">
+     
+       
+	 <TableRow android:background="#758AA7" android:layout_margin="2dip">
+	       <TextView android:id="@+id/output"
+			android:layout_height="wrap_content"
+			android:padding="1px"
+			android:text="@string/default_output" android:layout_width="fill_parent" />
+		   <TextView android:id="@+id/content"
+			android:layout_height="wrap_content"
+			android:padding="2px"
+			android:text="@string/default_content" android:layout_width="fill_parent" />
+	 </TableRow>
+	 <TableRow android:background="#758AA7" android:layout_margin="2dip">
+       
+        <Button android:text="Save On Web"
+        android:id="@+id/save"
+        android:layout_width="wrap_content" 
+        android:layout_gravity="center" 
+         />
+        </TableRow>
+        
+     <TableRow android:background="#ffffff" android:layout_margin="2dip">
+       
+        <TextView style="@style/CodeFont"
+         android:text="@string/Name"   android:layout_width="30px" android:layout_gravity="left"/>
+        <EditText android:id="@+id/name" 
+        android:layout_width="wrap_content"
+             android:gravity="left" android:layout_gravity="left"  android:width="210px"/>
+    </TableRow>
+     <TableRow android:background="#ffffff" android:layout_margin="2dip">
+       
+        <TextView style="@style/CodeFont"
+         android:text="@string/Email"   android:layout_gravity="left"/>
+        <EditText android:id="@+id/email" 
+         android:layout_width="wrap_content" android:layout_gravity="left" android:width="210px"/>
+    </TableRow>
+     <TableRow android:background="#ffffff" android:layout_margin="2dip">
+       
+        <TextView style="@style/CodeFont"
+         android:text="@string/LoginName"   android:layout_gravity="left"/>
+        <EditText android:id="@+id/loginname" 
+         android:layout_width="wrap_content" android:layout_gravity="left" android:width="210px"/>
+    </TableRow>
+     <TableRow android:background="#ffffff" android:layout_margin="2dip">
+       
+        <TextView style="@style/CodeFont"
+         android:text="@string/Password"   android:layout_gravity="left"/>
+        <EditText android:id="@+id/password" 
+         android:layout_width="wrap_content" android:layout_gravity="left" android:width="210px"/>
+    </TableRow>
+    </TableLayout>      
+ </ScrollView>

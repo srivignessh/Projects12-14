@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">Bluetooth2</string>
+    <string name="title_activity_main">Bluetooth2</string>
+    <string name="btn_ON">LED ON</string>
+    <string name="btn_OFF">LED OFF</string>
+
+</resources>

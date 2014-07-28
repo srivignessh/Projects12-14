@@ -1,0 +1,307 @@
+
+rmi.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000001b0  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         000006cc  00000000  00000000  00000204  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      00000085  00000000  00000000  000008d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_aranges 00000080  00000000  00000000  00000958  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000489  00000000  00000000  000009d8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 0000012b  00000000  00000000  00000e61  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   0000038b  00000000  00000000  00000f8c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000094  00000000  00000000  00001318  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    000000fa  00000000  00000000  000013ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e0 eb       	ldi	r30, 0xB0	; 176
+  68:	f1 e0       	ldi	r31, 0x01	; 1
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a0 36       	cpi	r26, 0x60	; 96
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	a0 e6       	ldi	r26, 0x60	; 96
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a0 36       	cpi	r26, 0x60	; 96
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 61 00 	call	0xc2	; 0xc2 <main>
+  8a:	0c 94 d6 00 	jmp	0x1ac	; 0x1ac <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <straight>:
+#include <util/delay.h>
+
+
+void straight()
+{
+	PORTB=0b10100101;
+  92:	85 ea       	ldi	r24, 0xA5	; 165
+  94:	88 bb       	out	0x18, r24	; 24
+}
+  96:	08 95       	ret
+
+00000098 <back>:
+void back()
+{
+	PORTB=0b10101010;
+  98:	8a ea       	ldi	r24, 0xAA	; 170
+  9a:	88 bb       	out	0x18, r24	; 24
+}
+  9c:	08 95       	ret
+
+0000009e <left>:
+void left()
+{
+	PORTB=0b10100100;
+  9e:	84 ea       	ldi	r24, 0xA4	; 164
+  a0:	88 bb       	out	0x18, r24	; 24
+}
+  a2:	08 95       	ret
+
+000000a4 <right>:
+void right()
+{
+	PORTB=0b10100001;
+  a4:	81 ea       	ldi	r24, 0xA1	; 161
+  a6:	88 bb       	out	0x18, r24	; 24
+}
+  a8:	08 95       	ret
+
+000000aa <leftin>:
+void leftin()
+{
+	PORTB=0b10100110;
+  aa:	86 ea       	ldi	r24, 0xA6	; 166
+  ac:	88 bb       	out	0x18, r24	; 24
+	while(bit_is_set(PINC,7));
+  ae:	9f 99       	sbic	0x13, 7	; 19
+  b0:	fe cf       	rjmp	.-4      	; 0xae <leftin+0x4>
+}
+  b2:	08 95       	ret
+
+000000b4 <rightin>:
+void rightin()
+{
+	PORTB=0b10101001;
+  b4:	89 ea       	ldi	r24, 0xA9	; 169
+  b6:	88 bb       	out	0x18, r24	; 24
+	while(bit_is_set(PINC,7));
+  b8:	9f 99       	sbic	0x13, 7	; 19
+  ba:	fe cf       	rjmp	.-4      	; 0xb8 <rightin+0x4>
+}
+  bc:	08 95       	ret
+
+000000be <stop>:
+void stop()
+{
+	PORTB=0x00;
+  be:	18 ba       	out	0x18, r1	; 24
+}
+  c0:	08 95       	ret
+
+000000c2 <main>:
+
+int main(void)
+{	DDRB=0xFF;
+  c2:	8f ef       	ldi	r24, 0xFF	; 255
+  c4:	87 bb       	out	0x17, r24	; 23
+	DDRC=0x03;
+  c6:	83 e0       	ldi	r24, 0x03	; 3
+  c8:	84 bb       	out	0x14, r24	; 20
+	PORTC=0x02;
+  ca:	82 e0       	ldi	r24, 0x02	; 2
+  cc:	85 bb       	out	0x15, r24	; 21
+	PORTB=0x00;
+  ce:	18 ba       	out	0x18, r1	; 24
+	straight();
+  d0:	0e 94 49 00 	call	0x92	; 0x92 <straight>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  d4:	8f ef       	ldi	r24, 0xFF	; 255
+  d6:	99 e6       	ldi	r25, 0x69	; 105
+  d8:	a8 e1       	ldi	r26, 0x18	; 24
+  da:	81 50       	subi	r24, 0x01	; 1
+  dc:	90 40       	sbci	r25, 0x00	; 0
+  de:	a0 40       	sbci	r26, 0x00	; 0
+  e0:	e1 f7       	brne	.-8      	; 0xda <main+0x18>
+  e2:	00 c0       	rjmp	.+0      	; 0xe4 <main+0x22>
+  e4:	00 00       	nop
+	_delay_ms(500);
+	while(1)
+	{
+		
+		if((bit_is_clear(PINC,3)) && (bit_is_set(PINC,5)) && (bit_is_set(PINC,2)) && (bit_is_clear(PINC,4)))
+  e6:	9b 99       	sbic	0x13, 3	; 19
+  e8:	09 c0       	rjmp	.+18     	; 0xfc <main+0x3a>
+  ea:	9d 9b       	sbis	0x13, 5	; 19
+  ec:	07 c0       	rjmp	.+14     	; 0xfc <main+0x3a>
+  ee:	9a 9b       	sbis	0x13, 2	; 19
+  f0:	05 c0       	rjmp	.+10     	; 0xfc <main+0x3a>
+  f2:	9c 99       	sbic	0x13, 4	; 19
+  f4:	03 c0       	rjmp	.+6      	; 0xfc <main+0x3a>
+		straight();
+  f6:	0e 94 49 00 	call	0x92	; 0x92 <straight>
+  fa:	f5 cf       	rjmp	.-22     	; 0xe6 <main+0x24>
+		else if(((bit_is_set(PINC,3)) && (bit_is_set(PINC,5)) && (bit_is_clear(PINC,2)) && (bit_is_clear(PINC,4)))||((bit_is_clear(PINC,3)) && (bit_is_set(PINC,5)) && (bit_is_clear(PINC,2)) && (bit_is_clear(PINC,4))))
+  fc:	9b 9b       	sbis	0x13, 3	; 19
+  fe:	06 c0       	rjmp	.+12     	; 0x10c <main+0x4a>
+ 100:	9d 9b       	sbis	0x13, 5	; 19
+ 102:	04 c0       	rjmp	.+8      	; 0x10c <main+0x4a>
+ 104:	9a 99       	sbic	0x13, 2	; 19
+ 106:	02 c0       	rjmp	.+4      	; 0x10c <main+0x4a>
+ 108:	9c 9b       	sbis	0x13, 4	; 19
+ 10a:	08 c0       	rjmp	.+16     	; 0x11c <main+0x5a>
+ 10c:	9b 99       	sbic	0x13, 3	; 19
+ 10e:	09 c0       	rjmp	.+18     	; 0x122 <main+0x60>
+ 110:	9d 9b       	sbis	0x13, 5	; 19
+ 112:	07 c0       	rjmp	.+14     	; 0x122 <main+0x60>
+ 114:	9a 99       	sbic	0x13, 2	; 19
+ 116:	05 c0       	rjmp	.+10     	; 0x122 <main+0x60>
+ 118:	9c 99       	sbic	0x13, 4	; 19
+ 11a:	03 c0       	rjmp	.+6      	; 0x122 <main+0x60>
+		left();
+ 11c:	0e 94 4f 00 	call	0x9e	; 0x9e <left>
+ 120:	e2 cf       	rjmp	.-60     	; 0xe6 <main+0x24>
+		else if(((bit_is_clear(PINC,3)) && (bit_is_clear(PINC,5)) && (bit_is_set(PINC,2)) && (bit_is_set(PINC,4)))||((bit_is_clear(PINC,3)) && (bit_is_clear(PINC,5)) && (bit_is_set(PINC,2)) && (bit_is_clear(PINC,4))))
+ 122:	9b 99       	sbic	0x13, 3	; 19
+ 124:	06 c0       	rjmp	.+12     	; 0x132 <main+0x70>
+ 126:	9d 99       	sbic	0x13, 5	; 19
+ 128:	04 c0       	rjmp	.+8      	; 0x132 <main+0x70>
+ 12a:	9a 9b       	sbis	0x13, 2	; 19
+ 12c:	02 c0       	rjmp	.+4      	; 0x132 <main+0x70>
+ 12e:	9c 99       	sbic	0x13, 4	; 19
+ 130:	08 c0       	rjmp	.+16     	; 0x142 <main+0x80>
+ 132:	9b 99       	sbic	0x13, 3	; 19
+ 134:	09 c0       	rjmp	.+18     	; 0x148 <main+0x86>
+ 136:	9d 99       	sbic	0x13, 5	; 19
+ 138:	07 c0       	rjmp	.+14     	; 0x148 <main+0x86>
+ 13a:	9a 9b       	sbis	0x13, 2	; 19
+ 13c:	05 c0       	rjmp	.+10     	; 0x148 <main+0x86>
+ 13e:	9c 99       	sbic	0x13, 4	; 19
+ 140:	03 c0       	rjmp	.+6      	; 0x148 <main+0x86>
+		right();
+ 142:	0e 94 52 00 	call	0xa4	; 0xa4 <right>
+ 146:	cf cf       	rjmp	.-98     	; 0xe6 <main+0x24>
+		else if((bit_is_set(PINC,3)) && (bit_is_set(PINC,5)) && (bit_is_set(PINC,2)) && (bit_is_clear(PINC,4)) && (bit_is_set(PINC,7)))
+ 148:	9b 9b       	sbis	0x13, 3	; 19
+ 14a:	0b c0       	rjmp	.+22     	; 0x162 <main+0xa0>
+ 14c:	9d 9b       	sbis	0x13, 5	; 19
+ 14e:	09 c0       	rjmp	.+18     	; 0x162 <main+0xa0>
+ 150:	9a 9b       	sbis	0x13, 2	; 19
+ 152:	07 c0       	rjmp	.+14     	; 0x162 <main+0xa0>
+ 154:	9c 99       	sbic	0x13, 4	; 19
+ 156:	05 c0       	rjmp	.+10     	; 0x162 <main+0xa0>
+ 158:	9f 9b       	sbis	0x13, 7	; 19
+ 15a:	03 c0       	rjmp	.+6      	; 0x162 <main+0xa0>
+		leftin();
+ 15c:	0e 94 55 00 	call	0xaa	; 0xaa <leftin>
+ 160:	c2 cf       	rjmp	.-124    	; 0xe6 <main+0x24>
+		else if((bit_is_clear(PINC,3)) && (bit_is_set(PINC,5)) && (bit_is_set(PINC,2)) && (bit_is_set(PINC,4)) && (bit_is_set(PINC,7)))
+ 162:	9b 99       	sbic	0x13, 3	; 19
+ 164:	0b c0       	rjmp	.+22     	; 0x17c <main+0xba>
+ 166:	9d 9b       	sbis	0x13, 5	; 19
+ 168:	09 c0       	rjmp	.+18     	; 0x17c <main+0xba>
+ 16a:	9a 9b       	sbis	0x13, 2	; 19
+ 16c:	07 c0       	rjmp	.+14     	; 0x17c <main+0xba>
+ 16e:	9c 9b       	sbis	0x13, 4	; 19
+ 170:	05 c0       	rjmp	.+10     	; 0x17c <main+0xba>
+ 172:	9f 9b       	sbis	0x13, 7	; 19
+ 174:	03 c0       	rjmp	.+6      	; 0x17c <main+0xba>
+		rightin();
+ 176:	0e 94 5a 00 	call	0xb4	; 0xb4 <rightin>
+ 17a:	b5 cf       	rjmp	.-150    	; 0xe6 <main+0x24>
+		else if((bit_is_set(PINC,3)) && (bit_is_set(PINC,5)) && (bit_is_set(PINC,2)) && (bit_is_set(PINC,4)) && (bit_is_clear(PINC,7)))
+ 17c:	9b 9b       	sbis	0x13, 3	; 19
+ 17e:	b3 cf       	rjmp	.-154    	; 0xe6 <main+0x24>
+ 180:	9d 9b       	sbis	0x13, 5	; 19
+ 182:	b1 cf       	rjmp	.-158    	; 0xe6 <main+0x24>
+ 184:	9a 9b       	sbis	0x13, 2	; 19
+ 186:	af cf       	rjmp	.-162    	; 0xe6 <main+0x24>
+ 188:	9c 9b       	sbis	0x13, 4	; 19
+ 18a:	ad cf       	rjmp	.-166    	; 0xe6 <main+0x24>
+ 18c:	9f 99       	sbic	0x13, 7	; 19
+ 18e:	ab cf       	rjmp	.-170    	; 0xe6 <main+0x24>
+		{straight();
+ 190:	0e 94 49 00 	call	0x92	; 0x92 <straight>
+ 194:	8f ef       	ldi	r24, 0xFF	; 255
+ 196:	93 ec       	ldi	r25, 0xC3	; 195
+ 198:	a9 e0       	ldi	r26, 0x09	; 9
+ 19a:	81 50       	subi	r24, 0x01	; 1
+ 19c:	90 40       	sbci	r25, 0x00	; 0
+ 19e:	a0 40       	sbci	r26, 0x00	; 0
+ 1a0:	e1 f7       	brne	.-8      	; 0x19a <main+0xd8>
+ 1a2:	00 c0       	rjmp	.+0      	; 0x1a4 <main+0xe2>
+ 1a4:	00 00       	nop
+		_delay_ms(200);
+		stop();}
+ 1a6:	0e 94 5f 00 	call	0xbe	; 0xbe <stop>
+ 1aa:	9d cf       	rjmp	.-198    	; 0xe6 <main+0x24>
+
+000001ac <_exit>:
+ 1ac:	f8 94       	cli
+
+000001ae <__stop_program>:
+ 1ae:	ff cf       	rjmp	.-2      	; 0x1ae <__stop_program>

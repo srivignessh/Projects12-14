@@ -1,0 +1,538 @@
+
+<!-- saved from url=(0072)http://www.cs.princeton.edu/courses/archive/spr05/cos126/cmd-prompt.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head><body bgcolor="#FFFFFF">
+
+<p><br>
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tbody><tr align="left">
+<td bgcolor="#000000">
+<font size="+1" face="helvetica" color="#FFFFFF">
+<center>Windows Command Prompt in 15 Minutes</center>
+</font></td></tr></tbody></table>
+
+
+</p><p>
+There are only a few Command Prompt commands that you will need to master 
+to make it through COS 126. The following is a brief tutorial
+covering the most important ones.
+
+
+</p><p>
+&nbsp;
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tbody><tr align="left">
+<td bgcolor="#dddddd">
+<font size="+0" face="helvetica" color="000000">
+<center><b>What is Command Prompt?</b></center>
+</font></td></tr></tbody></table>
+
+</p><p>
+The Command Prompt program allows you to work in an environment that looks 
+more like a traditional operating system as opposed to the icon based 
+Windows environment. In Command Prompt, you will use your keyboard.  You 
+won't use your mouse at all.
+Command Prompt works at a lower level than Windows. This means that you
+will have more control over the machine.
+The disadvantage is that it is less user-friendly.
+
+</p><p>
+You will need the command prompt in COS 126 to compile and execute
+your Java programs.
+Learning the Command Prompt also provides a gradual transition to
+Unix and Linux systems, which are prevalent in science, engineering,
+and industry.
+
+</p><p>
+<!--
+To start Command Prompt select 
+<blockquote><pre> <em> Start -> Programs -> Accessories -> Command Prompt</em></pre></blockquote>
+-->
+
+To launch Command Prompt select <em> Start -&gt; Run</em>
+and type <tt>cmd</tt> in the box.
+
+</p><p>The Command Prompt shows up as a black terminal window.
+The <em>command prompt</em> should look something like:
+
+</p><blockquote><pre><tt>C:\&gt;</tt></pre></blockquote>
+
+
+<p>This is where you type commands.
+The boldface type below (that follows the command prompt) is what you
+should type as you work through this tutorial.  Windows does not care
+if you use upper or lower case.  That means that command <tt>cd</tt> is 
+the same as <tt>CD</tt>.  It also means that, in Windows, file 
+<tt>HelloWorld.java</tt> is the same as <tt>helloworld.java</tt>.
+This is NOT true in the system to which you will be submitting your files.
+Be very careful!!!
+
+</p><p>
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tbody><tr align="left">
+<td bgcolor="#dddddd">
+<p align="center"><font size="+0" face="helvetica" color="000000"><b>Some Useful
+Commands</b></font>
+</p></td></tr></tbody></table>
+</p><ul>
+<li><b>javac:&nbsp; </b>To compile a Java program, use the 
+<tt>javac</tt>
+command. 
+Your program
+  should compile without any errors or warnings (or if there are warnings be
+  absolutely sure that they do not indicate a flaw in your program).&nbsp;
+
+<blockquote><pre>C:\&gt;<b>javac HelloWorld.java</b></pre></blockquote>
+
+</li><li><b>java:&nbsp; </b>To run a successfully compiled Java program, use 
+the <tt>java</tt> command. 
+
+<blockquote><pre>C:\&gt;<b>java HelloWorld</b></pre></blockquote>
+
+
+</li><li><b>more:&nbsp; </b>Display the contents of a file one screenful at a time.
+
+<blockquote><pre>C:\&gt;<b>more HelloWorld.java</b>
+</pre></blockquote>
+
+</li><li><b>exit:&nbsp; </b>Exit the Command Prompt program and close the 
+terminal window.  
+
+<blockquote><pre>C:\&gt;<b>exit</b>
+</pre></blockquote>
+
+
+
+
+</li></ul>
+
+<p>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tbody><tr align="left">
+<td bgcolor="#dddddd">
+<font size="+0" face="helvetica" color="000000">
+<center><b>Working with Files and Directories</b></center>
+</font>
+</td></tr></tbody></table>
+</p><p>
+You can also use Command Prompt commands to organize files into a directory 
+hierarchy. These commands are equivalent to corresponding commands
+that you access via the Windows point-and-click interface.
+It is useful to be familiar with both interfaces for managing files.
+
+</p><ul>
+
+<li><b>dir:&nbsp;</b>&nbsp;To view the contents of a directory, type 
+<tt>dir</tt>.  This command will list all the files and directories within 
+the current directory. It is analogous to clicking on a Windows folder to 
+see what's inside.
+
+<blockquote><pre>C:\&gt; <b>dir</b>
+ Volume in drive C has no label.
+ Volume Serial Number is C8C7-BDCD
+
+ Directory of C:\
+
+10/26/2004  01:36 PM         0 AUTOEXEC.BAT
+10/26/2004  01:36 PM         0 CONFIG.SYS
+02/10/2005  01:36 PM       126 HelloWorld.java
+12/09/2004  12:11 AM    DIR    Documents and Settings
+02/10/2005  08:59 PM    DIR    introcs
+11/02/2004  08:31 PM    DIR    j2sdk1.4.2_06
+12/29/2004  07:15 PM    DIR    Program Files
+01/13/2005  07:33 AM    DIR    WINDOWS
+               3 File(s)            126 bytes
+               5 Dir(s)  32,551,940,096 bytes free </pre></blockquote>
+
+There are 7 items in this directory. Some of them are files,
+like <tt>HelloWorld.java</tt>.
+Others are directories, like <tt>introcs</tt>.<p></p>
+
+
+</li><li><b>cd:&nbsp;</b>&nbsp; It is frequently useful to know in which
+directory you are currently working. In order to find out, type
+<tt>cd</tt> at the command prompt.
+
+<blockquote><pre>C:\&gt; <b>cd</b>
+C:\</pre></blockquote>
+
+To change directories, use the <tt>cd</tt> command with the name of a 
+directory.
+
+<blockquote><pre>C:\&gt; <b>cd introcs</b></pre></blockquote>
+
+<p>Now, the command prompt will be:
+</p><blockquote><pre>C:\introcs&gt; </pre></blockquote>
+
+<p> To see what is in this directory type:
+</p><blockquote><pre>C:\introcs&gt; <b>dir </b>
+ Volume in drive C has no label.
+ Volume Serial Number is C8C7-BDCD
+
+ Directory of C:\introcs
+
+02/10/2005  08:59 PM    DIR            .
+02/10/2005  08:59 PM    DIR            ..
+02/03/2005  11:53 PM               126 HelloWorld.java
+01/17/2005  01:16 AM               256 readme.txt
+               2 File(s)            382 bytes 
+               2 Dir(s)</pre></blockquote>
+
+<p>To return to the previous directory, use the <tt>cd</tt> command,
+but this time followed by a space and two periods.</p>
+
+<blockquote><pre>C:\introcs&gt; <b>cd ..</b>
+C:\&gt; 
+</pre></blockquote>
+
+
+
+<p></p></li><li><b>mkdir:</b>  To create a new directory, use the command mkdir.
+The following command creates a directory named <tt>hello</tt>,
+which you can use to to store all of your files associated with
+the Hello World assignment.
+
+<blockquote><pre>C:\introcs&gt; <b>mkdir hello</b></pre></blockquote>
+
+<p>To see that it actually worked, use the <tt>dir</tt> command.</p>
+
+<blockquote><pre>C:\introcs&gt; <b>dir </b>
+ Volume in drive C has no label.
+ Volume Serial Number is C8C7-BDCD
+
+ Directory of C:\introcs
+
+02/10/2005  08:59 PM    DIR            .
+02/10/2005  08:59 PM    DIR            ..
+02/11/2005  02:53 PM    DIR            hello
+02/03/2005  11:53 PM               126 HelloWorld.java
+01/17/2005  01:16 AM               256 readme.txt
+               2 File(s)            382 bytes
+               3 Dir(s)
+</pre></blockquote>
+
+
+<p></p></li><li><b>move:</b> Now, move the two files <tt>HelloWorld.java</tt> and
+<tt>readme.txt</tt> into the hello directory using the <tt>move</tt> 
+command.
+
+<blockquote><pre>C:\introcs&gt; <b>move HelloWorld.java hello</b>
+C:\introcs&gt; <b>move readme.txt hello</b>
+C:\introcs&gt; <b>dir</b>
+ Volume in drive C has no label.
+ Volume Serial Number is C8C7-BDCD
+
+ Directory of C:\introcs
+
+02/10/2005  08:59 PM    DIR            .
+02/10/2005  08:59 PM    DIR            ..
+02/11/2005  02:53 PM    DIR            hello
+               0 File(s)              0 bytes
+               3 Dir(s)
+</pre></blockquote>
+
+The two files are no longer visible from the current directory.
+
+<p>
+To access the two files,
+change directories with the <tt>cd</tt> command. Then use the <tt>dir</tt> 
+command to see what is in this new directory.
+
+</p><blockquote><pre>C:\introcs&gt; <b>cd hello</b>
+C:\introcs\hello&gt; <b>dir</b>
+ Volume in drive C has no label.
+ Volume Serial Number is C8C7-BDCD
+
+ Directory of C:\introcs\hello
+
+02/10/2005  08:59 PM    DIR            .
+02/10/2005  08:59 PM    DIR            ..
+02/03/2005  11:53 PM               126 HelloWorld.java
+01/17/2005  01:16 AM               256 readme.txt
+               2 File(s)            382 bytes
+               2 Dir(s)
+</pre></blockquote>
+
+<p>You can also use <tt>move</tt> to rename a file.  Simply specify a new 
+filename instead of a directory name.  Suppose you accidentally messed up 
+the upper and lower case and had saved HelloWorld.java as helloworld.java.
+Use two move commands to fix it.
+
+</p><blockquote><pre>C:\introcs\hello&gt; <b>dir</b>
+ Volume in drive C has no label.
+ Volume Serial Number is C8C7-BDCD
+
+ Directory of C:\introcs\hello
+
+02/10/2005  08:59 PM    DIR            .
+02/10/2005  08:59 PM    DIR            ..
+02/03/2005  11:53 PM               126 helloworld.java
+01/17/2005  01:16 AM               256 readme.txt
+               2 File(s)            382 bytes
+               2 Dir(s)
+
+C:\introcs\hello&gt; <b>move helloworld.java temp.java</b>
+C:\introcs\hello&gt; <b>move temp.java HelloWorld.java</b>
+C:\introcs\hello&gt; <b>dir</b>
+ Volume in drive C has no label.
+ Volume Serial Number is C8C7-BDCD
+
+ Directory of C:\introcs\hello
+
+02/10/2005  08:59 PM    DIR            .
+02/10/2005  08:59 PM    DIR            ..
+02/03/2005  11:53 PM               126 HelloWorld.java
+01/17/2005  01:16 AM               256 readme.txt
+               2 File(s)            382 bytes
+               2 Dir(s)
+
+</pre></blockquote>
+
+It takes two moves because Windows won't let you move to an already 
+existing filename and, to Windows, <tt>helloworld.java</tt> is the same as 
+<tt>HelloWorld.java</tt>.
+
+<p></p></li><li><b>copy:&nbsp; </b>To make a copy of a file, 
+use the <tt>copy</tt> command. The following command
+creates a backup copy of our HelloWorld.java program. This is especially 
+useful when you
+modify a working program, but might want to revert back to the original
+version if
+your modifications don't succeed.&nbsp;
+
+<blockquote><pre>C:\introcs\hello&gt; <b>copy HelloWorld.java HelloWorld.bak</b>
+C:\introcs\hello&gt; <b>dir</b> 
+ Volume in drive C has no label.
+ Volume Serial Number is C8C7-BDCD
+
+ Directory of C:\introcs\hello
+
+02/10/2005  08:59 PM    DIR            .
+02/10/2005  08:59 PM    DIR            ..
+02/03/2005  11:53 PM               126 HelloWorld.java
+01/17/2005  01:16 AM               256 readme.txt
+               2 File(s)            382 bytes
+               3 Dir(s)
+</pre></blockquote>
+
+<p></p></li><li><b>del:&nbsp;</b> Subsequently, you might want to clean up useless
+files. The <tt>del</tt> command deletes a file.&nbsp;
+
+<blockquote>
+<pre>C:\introcs\hello&gt; <b>del HelloWorld.bak</b>
+C:\introcs\hello&gt; <b>dir</b> 
+ Volume in drive C has no label.
+ Volume Serial Number is C8C7-BDCD
+
+ Directory of C:\introcs
+
+02/10/2005  08:59 PM    DIR            .
+02/10/2005  08:59 PM    DIR            ..
+02/03/2005  11:53 PM               126 HelloWorld.java
+01/17/2005  01:16 AM               256 readme.txt
+               2 File(s)            382 bytes
+               3 Dir(s)
+</pre></blockquote>
+
+
+<p><em>WARNING: </em>When you revise a file in jEdit, the jEdit program 
+will automatically save a backup copy of your original file in the same 
+directory.  The name of the backup file will be the name of the original 
+file with a <tt>~</tt> at the end.  When you submit your program be 
+careful to 
+submit <tt>HelloWorld.java</tt> and not <tt>HelloWorld.java~</tt> which 
+is an old version of the file and has the wrong name.</p>
+
+
+</li><li><b>wildcards:&nbsp; </b>
+You can also apply the <tt>copy</tt>, <tt>del</tt>, and <tt>move</tt>
+commands to several files (or directories) at once. 
+To create a new directory called <tt>loops</tt>,
+and copy all of the files in the <tt>hello</tt> directory  
+<tt>C:\introcs\hello\</tt>
+into this newly created directory type:
+
+<blockquote>
+  <pre>C:\introcs&gt; <b>mkdir loops</b>
+C:\introcs&gt; <b>copy c:\introcs\hello\* loops</b></pre>
+</blockquote>
+
+
+  <p>Here the <tt>*</tt> matches all files in the
+<tt>C:\introcs\hello</tt> directory. It copies
+  them to your newly created <tt>loops</tt> directory.
+
+
+</p></li></ul>
+
+
+
+<p>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tbody><tr align="left">
+<td bgcolor="#dddddd">
+<font size="+0" face="helvetica" color="000000">
+<center><b>Redirection</b></center></font>
+</td></tr></tbody></table>
+</p><p>Two important abstractions in Command Prompt are <i>standard input</i> 
+and <i>standard
+output</i>. By default standard input is your keyboard, and standard
+output is your computer screen. For example, in Assignment 1, we write a
+program <tt>CenterofMass.java</tt> that reads input using StdIn.java and 
+writes 
+output using 
+System.out.println(). To run our
+program, the user types the command "<tt>java CenterofMass</tt>"
+and enters double type values in triplets: <tt>xposition yposition 
+mass</tt> 
+from the keyboard. The results appear in the terminal window.
+
+</p><blockquote><pre>C:\introcs\loops&gt; <b>java CenterofMass</b>
+<b>0 0 10</b>
+<b>1 1 10</b>
+0.5  0.5  20</pre></blockquote>
+
+<ul>
+<li><b>Redirecting standard input.</b>
+As an alternative, we can create a file 
+that consists of the same six input numbers.
+Using a text editor (like jEdit), create a file named <tt>input.txt</tt>,
+and type in the six numbers.
+After saving the file in the <tt>loops</tt> directory, type the following 
+command to verify that you
+entered the integers correctly:
+
+<blockquote><pre>C:\introcs\loops&gt; <b>more input.txt</b>
+0 0 10
+1 1 10
+</pre></blockquote>
+
+
+<p>Then to read the integers from the file instead of the keyboard, we use the
+redirection symbol "&lt;".</p>
+
+<blockquote><pre>C:\introcs\loops&gt; <b>java CenterofMass &lt; input.txt</b>
+0.5  0.5  20</pre></blockquote>
+
+
+  <p>This produces exactly the same result as if the user had typed the numbers,
+  except that the user has no opportunity to enter numbers from the
+keyboard. This is especially useful for two reasons. First, if there are lots of
+input values (there are over 700 inputs for Assignment 2) it would be tedious to
+retype them in each time we run our program.&nbsp; Second, it allows programs to be automated,
+without waiting for user interaction. This means that your grader can process
+  your homework programs without typing in the input values by hand each 
+time.</p>
+
+</li><li><b>Redirecting standard output.</b> Similarly it is possible to redirect
+  the output to a file instead of to the screen. Continuing with the same
+  example, if we want to save the output permanently, we can use the output
+  redirection symbol '&gt;'.&nbsp;
+
+
+<blockquote><pre>C:\introcs\loops&gt; <b>java CenterofMass &gt; output.txt</b>
+<b>0 0 10</b>
+<b>1 1 10</b></pre></blockquote>
+
+
+  The user still types in the input values from the keyboard, but instead of
+  sending the output to the screen, it is sent to the file named
+  <tt>output.txt</tt>.
+Note that all printf output is sent to the file, even the
+  statement that tells the user what to do.&nbsp;Be careful, if the file
+  <tt>output.txt</tt> already exists, it will be overwritten. (To append 
+use '&gt;&gt;'  instead.)
+
+<blockquote><pre>phoenix.Princeton.EDU% <b>more output.txt</b></pre></blockquote>
+
+
+</li><li>  <b>Redirecting standard input and standard output.</b>  It is often useful to
+  use both redirection operations simultaneously.
+
+
+<blockquote><pre>C:\introcs\loops&gt; <b>java CenterofMass &lt; input.txt &gt; output2.txt</b> </pre> </blockquote>
+
+  After executing this command, no output appears on the screen, but the file output2.txt
+  now contains exactly the same data as
+  <tt>output.txt</tt> above.
+
+
+</li></ul>
+
+<p>
+&nbsp;
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tbody><tr align="left">
+<td bgcolor="#dddddd">
+<font size="+0" face="helvetica" color="000000">
+<center><b> Piping</b></center>
+</font>
+</td></tr></tbody></table>
+</p><p>Another useful abstraction is <i>piping</i>.&nbsp; Piping is when the
+output of one program is used as the input of another program.
+
+For example,
+suppose we want to view the output of a program, but there is so much that it
+whizzes by on the screen too fast to read. (The program 
+<tt>RandInts.java</tt> prints out a
+    bunch of random integers.) One possible way to accomplish this
+is to type the following two commands.
+
+
+</p><blockquote><pre>C:\introcs&gt; <b>java RandInts &gt; temp.txt</b>
+C:\introcs&gt; <b>more &lt; temp.txt</b></pre></blockquote>
+
+
+Note that <tt>more</tt> will work by redirecting the file temp.txt to 
+standard input (as
+is done here) or by simply using the filename (as is done at the beginning of
+the document). Instead, we could do this in one line using the pipe symbol '|'
+
+
+<blockquote><pre>C:\introcs&gt; <b>java RandInts | more</b></pre></blockquote>
+
+
+<p>
+This is often useful when debugging a program, especially if your program goes
+into an infinite loop and you want to see the first few values that it prints.  
+
+<!--
+<p><li>
+As a second example, suppose we want to print out the output of running the
+command &quot;help126&quot;. We want to use the output of the help126 command as
+the input to a printing command. Piping gets the job done.
+
+
+<blockquote><pre>phoenix.Princeton.EDU% <b>help126 | lpr126</b></pre></blockquote>
+
+
+
+<p>
+<TABLE BORDER = 0 CELLPADDING = 2 CELLSPACING = 0 WIDTH = 100%>
+<tr align = left>
+<td bgcolor = "#dddddd">
+<font size = +0 face = "helvetica" color = "000000">
+<center><b>Writing COS 126 Programs With Emacs</b></center></font>
+</table>
+<p>A C Program is a text file
+(similar
+to an .html file) that can be created using any word processor. Emacs is a
+powerful word processor specifically designed for writing code. It offers many
+features not found in Word or Notepad, including auto-indenting, auto-compiling,
+and syntax highlighting.<p>&nbsp;<p>&nbsp;
+-->
+
+</p><hr>
+<address>
+&nbsp;
+</address>
+
+<address>
+Written by Jake Brenner, Donna Gabai and Kevin Wayne.<br>
+</address>
+
+
+</body></html>

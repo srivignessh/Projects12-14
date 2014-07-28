@@ -1,0 +1,56 @@
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  background: #333;
+}
+
+#page-wrapper {
+  width: 600px;
+  background: #FFF;
+  padding: 1em;
+  margin: 1em auto;
+  height: 40px;
+  border-top: 5px solid #69c773;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  text-align: center;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+#fileDisplayArea {
+  margin-top: 2em;
+  width: 100%;
+  overflow-x: auto;
+}
+#footer {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 18px;
+  color:  #69c773;
+}
+#wrapper {
+    width:600px;
+    margin: 30px auto;
+    border:1px solid #000;
+    background:#EEF;
+    padding:10px 0 25px 0;
+}
+#slide-wrap {
+    width: 800px; 
+    height: 480px;
+    margin:0 auto;
+    overflow: auto; 
+    border:1px solid #000;
+}
+#inner-wrap {
+    float:left;
+    margin-right:-30000px;/*Be safe with Opera's limited negative margin of 32695px (-999em could cause problems with large font sizes)*/
+    padding-left:20px;
+}

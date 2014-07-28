@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+   <EditText
+       android:id="@+id/password"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:layout_centerHorizontal="true"
+       android:layout_marginBottom="40dp"
+       android:ems="10"
+       android:text="heal" />
+
+   <TextView
+       android:id="@+id/content"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:layout_centerVertical="true"
+       android:text="TextView" />
+
+   <EditText
+       android:id="@+id/email"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="38dp"
+       android:ems="10"
+       android:text="srigmail.com" />
+
+   <Button
+       android:id="@+id/save"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/content"
+       android:layout_below="@+id/content"
+       android:layout_marginTop="30dp"
+       android:text="save" />
+
+   <EditText
+       android:id="@+id/name"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/email"
+       android:layout_alignParentTop="true"
+       android:ems="10"
+       android:text="sri" />
+
+   <EditText
+       android:id="@+id/loginname"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/email"
+       android:layout_below="@+id/email"
+       android:layout_marginTop="26dp"
+       android:ems="10"
+       android:text="pss" />
+   
+</RelativeLayout>

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "rmi", "rmi\rmi.cproj", "{D6F76997-B27E-48DF-A840-106BB01DFC64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6F76997-B27E-48DF-A840-106BB01DFC64}.Debug|AVR.ActiveCfg = Debug|AVR
+		{D6F76997-B27E-48DF-A840-106BB01DFC64}.Debug|AVR.Build.0 = Debug|AVR
+		{D6F76997-B27E-48DF-A840-106BB01DFC64}.Release|AVR.ActiveCfg = Release|AVR
+		{D6F76997-B27E-48DF-A840-106BB01DFC64}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

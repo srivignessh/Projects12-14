@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0061)http://introcs.cs.princeton.edu/java/15inout/windows-cmd.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>
+Java and the Windows Command Prompt
+</title>
+
+</head>
+<body bgcolor="#FFFFFF">
+
+<h2>
+Java and the Windows Command Prompt
+</h2>
+
+
+<p><br>
+<font color="red">This page is obsolete.</font>
+
+</p><p><br>
+
+
+
+This document instructs you on how to use the Windows Command Prompt 
+with Java. These instructions are specialized to Windows 7, but are
+similar for Windows XP and Windows Vista.
+<!--
+For a light-hearted essay on the command line, you might enjoy
+Neal Stephenson's
+essay <a href = "command.txt">In the Beginning was the Command Line</a>.
+-->
+
+
+</p><p>
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tbody><tr align="CENTER">
+<td bgcolor="BLACK">
+<font face="HELVETICA" color="WHITE">   
+Java
+</font></td></tr></tbody></table>
+</p><p>
+You will use the Java compiler <tt>javac</tt> to compile your Java programs and
+the Java interpreter <tt>java</tt> to run them.
+You should <b>skip the first step</b> if Java is already installed on your machine.
+
+</p><ul>
+<li>
+
+Download and install the latest version of
+the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">
+Java Platform, Standard Edition Development Kit (Java SE 6 Update 27)</a>.
+Note the installation directory for later—probably
+something like <tt>C:\Program Files\Java\jdk1.6.0_27\bin</tt>.
+
+
+<p></p></li><li>
+To make sure that Windows can find the Java compiler and interpreter:
+<ul>
+<p></p><li>
+<p>
+Select <em>Start -&gt; Computer -&gt; System Properties -&gt; Advanced system settings -&gt; Environment Variables -&gt; System variables -&gt; PATH</em>.
+
+<!-- http://www.itechtalk.com/thread3595.html -->
+
+<!--
+Select <em>Start -> Control Panel -> System and Security -> Programs -> Advanced -> Environment Variables -> PATH</em>
+-->
+
+</p><p>
+<!-- [ In Vista, select <em>Start -> Control Panel -> System and Maintenance -> System -> Advanced System Settings -> Advanced -> Environment variables -> PATH</em>. ] -->
+[ In Vista, select <em>Start -&gt; My Computer -&gt; Properties -&gt; Advanced -&gt; Environment Variables -&gt; System variables -&gt; PATH</em>. ]
+
+
+</p><p>
+[ In Windows XP, Select <em>Start -&gt; Control Panel -&gt; System -&gt; Advanced -&gt; Environment Variables -&gt; System variables -&gt; PATH</em>. ]
+
+
+</p><p></p></li><li>Prepend <b><tt>C:\Program Files\Java\jdk1.6.0_27\bin;</tt></b>
+to the <em>beginning</em> of the <tt>PATH</tt> variable.
+
+<p></p></li><li>Click OK three times.
+
+</li></ul>
+
+<!--
+<p>
+You might need to switch to <em>Classic view</em> instead of <em>Category view</em> to
+discover all of the options.
+-->
+
+
+</li></ul>
+
+
+<p>
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tbody><tr align="CENTER">
+<td bgcolor="BLACK">
+<font face="HELVETICA" color="WHITE">   
+Command-line interface
+</font></td></tr></tbody></table>
+</p><p>
+You will type commands in an application called the <em>Command Prompt</em>.
+
+</p><ul>
+<li>
+Launch the command prompt via
+<em>All Programs -&gt; Accessories -&gt; Command Prompt</em>.
+(If you already had a command prompt window open, close it
+and launch a new one.)
+You should see the command prompt; it will look something like:
+<blockquote>
+<pre>Microsoft Windows [Version 6.1.7600]
+Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+</pre>
+</blockquote>
+
+<p></p></li><li>
+To check that you have the right version of Java installed,
+type the text in boldface below. You should see something similar to the 
+information printed below.
+(It's important that you see the number <tt>1.6</tt> or <tt>1.5</tt>
+for the Java version number, but the rest is not critical.)
+
+<blockquote><pre>C:\Users\username&gt;<b>java -version</b>
+java version "1.6.0_27"
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.6.0_27-b07)
+Java HotSpot(TM) Client VM (build 1.6.0_27-b13, mixed mode, sharing)
+</pre></blockquote>
+
+Then type:
+<blockquote><pre>C:\Users\username&gt;<b>javac -version</b>
+javac 1.6.0_27
+</pre></blockquote>
+
+<p></p></li><li>
+Since you will be using the Command Prompt frequently,
+we recommend customizing the default settings.
+Right-click the title bar of an open Command Prompt window,
+select <em>Properties</em> and then:
+<ul>
+<!-- <p><li> Set <em>Layout -> Window Size</em> to 80 x 25. -->
+<p></p><li> Set <em>Layout -&gt; Screen Buffer Size</em> to 80 x 500.
+<p></p></li><li> Select <em>Options -&gt; Edit Options -&gt; QuickEdit Mode</em>.
+<p></p></li><li> Select <em>Options -&gt; Edit Options -&gt; Insert Mode</em>.
+<!-- <p><li> Set <em>Shortcut -> Start in</em> to "<tt>C:\introcs</tt>" or whichever 
+directory you'd like to start in when launching the Command Prompt.
+-->
+
+</li></ul>
+
+<!--
+<p>
+Click <em>OK</em> and check <em>Save properties for future windows with same title</em>
+to make the changes permanent.
+-->
+
+</li></ul>
+
+
+
+<p>
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tbody><tr align="CENTER">
+<td bgcolor="BLACK">
+<font face="HELVETICA" color="WHITE">
+Compile the Program
+</font></td></tr></tbody></table>
+
+</p><p>
+You will use the <tt>javac</tt> command to convert your Java program into a form more 
+amenable for execution on a computer.
+
+</p><ul>
+
+<p></p><li>
+From the Command Prompt, navigate to the directory containing
+your <tt>.java</tt> files, say <tt>C:\introcs\hello</tt>, by typing the <tt>cd</tt> 
+command below.
+
+<blockquote><pre>C:\Users\username&gt;<b>cd c:\introcs\hello</b>
+C:\introcs\hello\&gt;
+</pre></blockquote>
+
+
+</li><li>
+Assuming the file, say <tt>HelloWorld.java</tt>,
+is in the current working directory, type the
+<tt>javac</tt> command in boldface below to compile it.
+<blockquote><pre>C:\introcs\hello\&gt;<b>javac HelloWorld.java</b>
+C:\introcs\hello\&gt;
+</pre></blockquote>
+If everything went well, you should see no error messages.
+
+</li></ul>
+
+<p>
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tbody><tr align="CENTER">
+<td bgcolor="BLACK">
+<font face="HELVETICA" color="WHITE">
+Execute the Program
+</font></td></tr></tbody></table>
+
+</p><p>
+You will use the <tt>java</tt> command to execute your program.
+
+</p><ul>
+<li>
+From the Command Prompt, type the <tt>java</tt> command below.
+
+<blockquote><pre>C:\introcs\hello\&gt;<b>java HelloWorld</b>
+Hello, World</pre></blockquote>
+
+If all goes well, you should see the output of
+the program - <tt>Hello, World</tt>.
+
+</li></ul>
+
+
+
+<p>
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tbody><tr align="CENTER">
+<td bgcolor="BLACK">
+<font face="HELVETICA" color="WHITE">   
+Input and Output
+</font></td></tr></tbody></table>
+
+</p><p>
+If your program gets stuck in an infinite loop, type
+<tt>Ctrl-c</tt> to break out.
+    
+</p><p> 
+If you are entering input from the keyboard, you can signify
+to your program that there is no more data by typing
+<tt>Ctrl-z</tt> for EOF (end of file).
+On some DOS systems the first line of output sent to the screen after you enter 
+EOF will be rendered invisible by DOS. This is not a problem with your code, but 
+rather a problem with DOS. To help you debug your program, we recommend including 
+an extra <tt>System.out.println();</tt> statement before what you really want 
+to print out. If anyone knows of a better fix, please let us know!     
+
+
+
+
+</p><p>
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tbody><tr align="CENTER">
+<td bgcolor="BLACK">
+<font face="HELVETICA" color="WHITE">   
+Troubleshooting
+</font></td></tr></tbody></table>
+
+</p><p>
+
+Here are a few suggestions that might help correct any installation
+woes you are experiencing. If you need assistance, don't hesitate
+to contact a staff member.
+
+</p><p><b>When I type, "java -version" I get an error.</b>
+Check that you edited your <tt>PATH</tt> environment variable as indicated.
+A missing <tt>;</tt> or an added <tt>%</tt> is enough to screw things up.
+Close and re-open a command prompt.
+Type <tt>path</tt> at the command prompt and look for an entry that includes
+<tt>C:\Program Files\Java\jdk1.6.0_27\bin;</tt>.
+Check that the version number <tt>1.6.0_27</tt>
+matches the one you installed—Oracle updates Java periodically and you
+might have a more recent version.
+If this doesn't fix the problem, check if you have any old versions of Java
+on your system. If so, un-install them and re-install Java.
+
+</p><p>
+<b>The command "java -version" works, but not "javac -version". Any thoughts?</b>
+It's likely a path issue. Try the suggestions from the previous
+question. Also check that you installed the JDK properly by checking
+that the  folder <tt>C:\Program Files\Java\jdk1.6.0_27\bin</tt> exists.
+
+</p><p><b>How can I check the values of my <tt>PATH</tt> variable?</b>
+Type the following at the command prompt.
+</p><blockquote><pre>C:\introcs\hello\&gt; <b>echo %PATH%</b>
+</pre></blockquote>
+
+The <tt>PATH</tt> variable should begin with
+<tt>C:\Program Files\Java\jdk1.6.0_27\bin;</tt>
+Be sure to open the command prompt after you have edited the PATH environment variable.
+You may also need to reboot for the environment variable change to take effect.
+
+<p>
+<b>I can compile with javac, but I get the error message
+"Exception in thread "main" java.lang.NoClassDefFoundError: HelloWorld"
+when I try to execute it with java.
+</b>
+First, be sure that <tt>HelloWorld.class</tt> is now in the current directory.
+Be sure to type <tt>java HelloWorld</tt> without a trailing <tt>.class</tt>
+or <tt>.java</tt>.
+Check that the command "<tt>java -version</tt>" works.
+Now try to execute with "<tt>java -cp . HelloWorld</tt>".
+If this works, you need to edit your <a href="http://introcs.cs.princeton.edu/java/15inout/classpath.html">classpath</a>.
+(iTunes has a proclivity for changing the <em>classpath</em>,
+so if you recently upgraded iTunes, this is likely
+the source of the problem.)
+
+
+</p><p><b>Where can I learn more about the Windows command line?</b>
+Here is a short tutorial on the <a href="http://introcs.cs.princeton.edu/java/15inout/msdos.html">Windows command prompt</a>.
+Microsoft maintains a complete
+<a href="http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/ntcmds.mspx">
+command line reference</a>.
+
+</p><p><b>How do I change my directory to the H: drive from the Windows Command Prompt?</b>
+Type H: at the command prompt. Then cd to the appropriate directory.
+
+
+
+
+</p></body></html>

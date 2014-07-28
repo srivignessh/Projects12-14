@@ -1,0 +1,218 @@
+body { font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 300; line-height: 1.5; }
+p    { font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 300; line-height: 1.5; margin-top: 10px; margin-bottom: 0px; }
+
+/* size of footer */
+p.footer { font-size: 12px; font-style; italic; }
+
+/* size of footer hyperlink */
+a.footer { font-size: 12px; }
+
+/* size of blurb in introcs/home */
+/* p.blurb { font-size: 12px; font-style: italic; line-height: 125%; } */
+
+/* size of blurb in introcs/home */
+p.blurb { font-size: 16px; font-style: italic; font-weight: 350; line-height: 140%; }
+
+li {  font-size: 15px; margin-top: 6px;}
+
+hr   { height:1px; color:#444444; }
+code { font-family: "courier new", courier, mono; font-size: 14px; }
+tt   { font-family: "courier new", courier, mono; font-size: 14px; }
+blockquote { margin-left: 40px; margin-right: 0px; }
+blockquote pre { font-family: "courier new", courier, mono; font-size: 13px; background-color:#ebebeb; padding: 10px 15px 10px 15px; }
+blockquote pre.small { font-family: "courier new", courier, mono; font-size: 11px; background-color:#ebebeb;}
+blockquote pre.tiny { font-family: "courier new", courier, mono; font-size: 10px; background-color:#ebebeb;}
+pre { margin-left: 0px; font-family: "courier new", courier, mono; font-size: 13px; background-color:#ebebeb; padding: 10px 10px 10px 15px; }
+
+em { font-style: italic; }
+
+
+th { font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.5; font-weight: bold;  background-color: #666666; color:#ffffff; }
+td { font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 300; line-height: 1.5; margin-top: 20px;}
+th a { font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.5; font-weight: bold;  background-color: #666666; color:#ffffff; }
+td a { font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 300; line-height: 1.5; margin-top: 20px;}
+
+td tt { font-family: "courier new", courier, mono; font-size: 13px; }
+
+h1 { font-size: 22px; font-weight:normal; font-variant:small-caps; 
+     background-color:#4e6994;   /* 221e1f = textbook black */
+     /* background-color:#0b5fb9; */  /* 221e1f = textbook black */
+     color:#FFFFFF; text-align: left; padding-right:15px; padding-left:20px;
+     padding-top:6px;padding-bottom:6px;}
+
+h1.center {text-align:center; }
+
+h2 { font-size: 15px; display: inline; text-align: left; font-weight: bold; }
+h3 { font-size: 15px; display: inline; font-weight: bold; }
+h4 { font-size: 22px; font-weight: bold; color:#7c927b; }     /* shade of green */
+h4 a { font-size: 22px; font-weight: bold; color:#7c927b; }   /* for a name tages 00cc66 */
+
+ol li        { list-style: decimal;     }
+ol ol li     { list-style: lower-alpha; }
+ol ol ol li  { list-style: lower-roman; }
+
+ol li.qa { list-style: upper-alpha; }
+
+ul li          { list-style: disc;    }
+ul ul li       { list-style: circle;  }
+ul ul ul li    { list-style: square;  }
+ul ul ul ul li { list-style: disc;    }
+
+a { font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 300; line-height: 1.5; text-decoration: none; }
+
+a:link    { color: #0b5fb9; }  /* shade of blue on cover = 436994 */
+a:hover   { color: #aa3e3b; text-decoration: underline;  }
+
+
+/* google custom search */
+.gsc-search-button,.gsc-clear-button {
+    display: none;
+}
+.gsc-search-box .gsc-input {
+    margin-left: 15px;
+    width: 145px;
+    font-family: Arial, sans-serif;
+}
+
+table.gsc-completion-container {
+ }
+
+
+#content  { margin-left: 204px;
+            padding-right: 1.5cm; padding-left: 1cm;
+            padding-top: 0cm; padding-bottom: 0cm; }
+
+
+/* http://www.tanfa.co.uk/css/examples/menu/tutorial-v.asp */
+
+
+/***************************************************/
+
+/* white on black headings */
+#menu a.picture { color: #fff; background: #000;  text-decoration: none; font-size: 12px;
+                 border-width: 0px; padding: 0px 0px;}
+
+
+#menu {
+float: left;
+width: 190px;
+/* background: #eee; */
+background: #000;
+}
+
+#menu ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+/* added this to override bullets */
+#menu ul li          { list-style: none; }
+#menu ul ul li       { list-style: none; }
+#menu ul ul ul li    { list-style: none; }
+#menu ul ul ul ul li { list-style: none; }
+
+/* added this to override 6px top margin */
+#menu li { margin: 0px;}
+
+#menu a, #menu h2 {
+/* changed from 12px/16px for thicker menu items */
+font: bold 12px/18px arial, helvetica, sans-serif;
+display: block;
+border-width: 1px;
+border-style: solid;
+border-color: #ccc #888 #555 #bbb;
+margin: 0;
+padding: 2px 10px;  /* changed from 2px 3px */
+}
+
+#menu a.book  {  
+line-height: 180%;
+}
+
+#menu a.booksite {  
+line-height: 180%;
+# margin: 0;
+# padding: 0px 0px;
+}
+
+#menu h2 {
+border-width: 0px;   /* added this - otherwise default is 1 from above */
+color: #fff;
+background: #000;
+}
+
+
+#menu a {
+color: #000;
+/* background: #efefef; */
+background: #cccccc;
+text-decoration: none;
+}
+
+/* white on black headings */
+#menu a.title { color: #fff; background: #000; font-variant:small-caps; font-size: 105%; }
+
+/* cover purple = 896e81 */
+/* cover blue   = 4e6994 */
+/* cover green  = 7c927b */
+/* cover purple = 896e81 */
+/* cover brown  = 907669 */
+/* cover aqua   = 639397 */
+
+#menu a:hover {
+color: #fff;
+background: #7c927b;
+}
+
+#menu ul ul a:hover {
+color: #fff;
+background: #896e81;
+}
+
+#menu ul ul ul a:hover {
+color: #fff;
+background: #907669;
+}
+
+
+#menu ul ul ul {
+position: absolute;
+top: 0;
+left: 0;
+}
+
+
+#menu li {position: relative;}
+
+#menu ul ul ul {
+position: absolute;
+top: 0;
+left: 100%;
+width: 100%;
+}
+
+div#menu ul ul ul 
+{display: none;}
+
+div#menu ul ul li:hover ul 
+{display: block;}
+
+div#menu ul ul ul,
+div#menu ul ul li:hover ul ul
+{display: none;}
+
+div#menu ul ul li:hover ul 
+{display: block;}
+
+div#menu ul ul ul,
+div#menu ul ul li:hover ul ul
+{display: none;}
+
+/* needed for third level */
+div#menu ul ul li:hover ul,
+div#menu ul ul ul li:hover ul
+{display: block;}
+
+
+

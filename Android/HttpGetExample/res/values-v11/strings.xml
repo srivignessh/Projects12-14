@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">HelloWebWord</string>
+    <string name="app_name">HelloWebWord</string>
+    <string name="address">First Name</string>
+    <string name="get_text">Get Data</string>
+    <string name="default_content">[ waiting... ]</string>
+    <string name="default_output">OUTPUT : </string>
+    
+    <string name="Name">Name</string>
+    <string name="Email">e-mail</string>
+    <string name="LoginName">login</string>
+    <string name="Password">Password</string>
+    <string name="Address">Address</string>
+    <string name="Telephone">Telephone</string>
+    <string name="Zipcode">Zip code</string>
+    <string name="Company">Company</string>
+    <string name="Country">Country</string>
+    <string name="City">City</string>
+    <string name="save">save</string>
+    <string name="Info">Enter </string>
+    <string name="default_address">http://www.mtiamerica.com/test.php</string>
+</resources>
+
